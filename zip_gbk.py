@@ -16,7 +16,7 @@ def main(filename):
             print("Extracting " + utf8name)
             pathname = os.path.dirname(utf8name)
             if not os.path.exists(pathname) and pathname != "":
-                os.makedirs(pathname)
+                os.makedirs(pathname,exist_ok=True)
             data = thiszipfile.read(name)
             if not os.path.exists(utf8name):
                 with open(utf8name, "wb") as fo:
